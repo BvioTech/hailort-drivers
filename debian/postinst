@@ -2,10 +2,10 @@
 set -e
 
 depmod -a 2>/dev/null || true
+modprobe hailo_pci 2>/dev/null || true
 
 if command -v udevadm >/dev/null 2>&1; then
   udevadm control --reload-rules 2>/dev/null || true
-  udevadm trigger --subsystem-match=hailo_chardev 2>/dev/null || true
 fi
 
 exit 0
