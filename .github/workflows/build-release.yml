@@ -31,7 +31,10 @@ jobs:
 
       - name: Generate checksum
         working-directory: dist
-        run: sha256sum *.deb > *.deb.sha256
+        run: |
+          for f in *.deb; do
+            sha256sum "$f" > "$f.sha256"
+          done
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
