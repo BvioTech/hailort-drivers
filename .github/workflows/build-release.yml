@@ -20,16 +20,9 @@ jobs:
         run: |
           mkdir -p /opt/builder
           curl -fsSL \
-            "https://github.com/BvioTech/violoop-builder/releases/download/v0.1.1/aarch64-none-linux-gnu.tar.gz" \
+            "https://github.com/BvioTech/violoop-builder/releases/download/v0.1.2/aarch64-none-linux-gnu.tar.gz" \
             -o /tmp/builder.tar.gz
           tar -xzf /tmp/builder.tar.gz -C /opt/builder
-
-      - name: Build kernel host scripts
-        run: |
-          # fixdep/modpost are compiled binaries excluded by kernel's own
-          # .gitignore, so they are absent from the tarball. Rebuild from
-          # the C sources that are tracked.
-          make -C /opt/builder/sysroot/usr/src/linux-headers-6.1-rockchip scripts
 
       - name: Build .deb
         env:
