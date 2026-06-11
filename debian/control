@@ -1,0 +1,5 @@
+Package: hailo-pci
+Version: 4.23.0
+Architecture: arm64
+Maintainer: doctor <doctor@bvio.ai>
+Description: Hailo-8 PCIe kernel driver and firmware for Rockchip Linux 6.1.99
