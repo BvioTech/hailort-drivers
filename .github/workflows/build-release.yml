@@ -23,6 +23,7 @@ jobs:
             "https://github.com/BvioTech/violoop-builder/releases/latest/download/aarch64-none-linux-gnu.tar.gz" \
             -o build/builder.tar.gz
           tar -xzf build/builder.tar.gz -C build/builder
+          ls build/builder/sysroot/usr/src/
 
       - name: Build .deb
         env:
